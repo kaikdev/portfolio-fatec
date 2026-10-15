@@ -283,6 +283,7 @@ section.experiencia .item {
     .titulo h2 {
         margin-bottom: 1rem;
         padding-right: 1rem;
+        max-width: 270px;
     }
     .titulo h2 span {
         font-size: 2rem;
