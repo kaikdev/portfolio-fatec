@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaik Silva Sousa - Portfólio Fatec</title>
+    <meta name="description" content="Portfólio acadêmico de Kaik Silva Sousa, estudante de Desenvolvimento de Software Multiplataforma na FATEC Zona Leste.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animacoes.css">
 </head>
 <body>
     <header id="header" class="content">
@@ -41,6 +43,10 @@
                 </li>
 
                 <li>
+                    <a href="#idiomas">Idiomas</a>
+                </li>
+
+                <li>
                     <a href="#projetos">Projetos</a>
                 </li>
             </ul>
@@ -50,27 +56,27 @@
     <main id="inicio">
         <div class="content">
             <div class="left">
-                <span class="texto-gradiente color">
+                <span class="texto-gradiente color entrada">
                     PORTFÓLIO ACADÊMICO
                 </span>
 
-                <h1>
+                <h1 class="entrada" style="--atraso: 120ms">
                     Olá! eu sou o
                     <span class="texto-gradiente">KAIK SILVA SOUSA</span>   
                 </h1>
 
-                <p class="descricao">
+                <p class="descricao entrada" style="--atraso: 240ms">
                     Sou estudante do curso de Desenvolvimento de Software Multiplataforma na FATEC Zona Leste.
                     Este portfólio foi criado para documentar e compartilhar os meus projetos semestrais durante minha trajetória acadêmica ao longo dos últimos cinco semestres.
                     Sinta-se à vontade para explorar as entregas de cada semestre e acompanhar de perto o meu desenvolvimento profissional!
                 </p>
 
-                <a href="#experiencia" class="cta">
+                <a href="#experiencia" class="cta entrada" style="--atraso: 360ms">
                     Veja mais
                 </a>
             </div>
 
-            <div class="area-img">
+            <div class="area-img entrada" style="--atraso: 200ms">
                 <img src="img/imagem-kaik.webp" alt="Imagem Kaik">
             </div>
         </div>
@@ -85,8 +91,8 @@
                 </h2>
             </div>
 
-            <div class="itens">
-                <div class="item">
+            <div class="itens timeline">
+                <div class="item atual">
                     <p class="cargo">
                         Auxiliar de Desenvolvedor Web
                     </p>
@@ -114,7 +120,7 @@
                     </ul>
                 </div>
 
-                <div class="item">
+                <div class="item atual">
                     <p class="cargo">
                         Assistente de E-commerce – Freelancer
                     </p>
@@ -182,7 +188,7 @@
                 </h2>
             </div>
 
-            <div class="itens">
+            <div class="itens grade grade-2">
                 <div class="item">
                     <p class="cargo">
                         Tecnólogo em Densevolvimento de Software Multiplataforma
@@ -192,7 +198,7 @@
                         Fatec Zona Leste
                     </p>
 
-                    <p class="situacao">
+                    <p class="situacao cursando">
                         Cursando | Ago. de 2024 a Dez. de 2026
                     </p>
                 </div>
@@ -206,7 +212,7 @@
                         Etec Zona Leste
                     </p>
 
-                    <p class="situacao">
+                    <p class="situacao completo">
                         Completo | Mar. de 2021 a Jul. de 2022
                     </p>
                 </div>
@@ -223,7 +229,7 @@
                 </h2>
             </div>
 
-            <div class="itens">
+            <div class="itens grade grade-4">
                 <div class="item">
                     <p class="cargo">
                         Preparação para o Mercado de Trabalho
@@ -267,6 +273,43 @@
         </div>
     </section>
     
+    <section class="experiencia idiomas" id="idiomas">
+        <div class="content">
+            <div class="titulo">
+                <h2>
+                    Proficiência em
+                    <span class="texto-gradiente">Idiomas</span>
+                </h2>
+            </div>
+
+            <div class="itens grade grade-2">
+                <div class="item">
+                    <p class="cargo">
+                        Português
+                    </p>
+
+                    <p class="empresa">
+                        Nativo
+                    </p>
+
+                    <div class="nivel" style="--nivel: 100%" aria-hidden="true"><span></span></div>
+                </div>
+
+                <div class="item">
+                    <p class="cargo">
+                        Inglês
+                    </p>
+
+                    <p class="empresa">
+                        Intermediário
+                    </p>
+
+                    <div class="nivel" style="--nivel: 60%" aria-hidden="true"><span></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="projetos" id="projetos">
         <div class="content">
             <div class="titulo">
@@ -279,127 +322,177 @@
             <div class="itens">
                 <div class="item">
                     <div class="imagem">
-                        <img src="https://picsum.photos/seed/ecoar/640/360" alt="Imagem ilustrativa do projeto Ecoar - Denúncias Ambientais" loading="lazy">
+                        <img src="img/ecoar-1.PNG" alt="Página inicial do Ecoar" loading="lazy">
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">1º Semestre</span>
                         <h3 class="nome">Ecoar - Denúncias Ambientais</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Portal web de denúncias ambientais, com API REST em Java e Spring, que permite reportar situações que prejudicam o meio ambiente.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre Ecoar - Denúncias Ambientais">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Ecoar - Denúncias Ambientais">GitHub do projeto</a>
+                            <a class="botao botao-detalhes" href="projetos/ecoar.html" aria-label="Ver mais sobre Ecoar - Denúncias Ambientais">Ver mais</a>
+                            <a class="botao botao-github" href="https://github.com/rogeriobgregorio/environmental-reporting-portal" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Ecoar - Denúncias Ambientais">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="imagem">
-                        <img src="https://picsum.photos/seed/estocai/640/360" alt="Imagem ilustrativa do projeto Estocaí - Gestão de Adega" loading="lazy">
+                        <img src="img/estocai-1.PNG" alt="Tela de login do Estocaí" loading="lazy">
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">2º Semestre</span>
                         <h3 class="nome">Estocaí - Gestão de Adega</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Sistema web de controle de estoque com dashboard de vendas e gestão de funcionários.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre Estocaí - Gestão de Adega">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Estocaí - Gestão de Adega">GitHub do projeto</a>
+                            <a class="botao botao-detalhes" href="projetos/estocai.html" aria-label="Ver mais sobre Estocaí - Gestão de Adega">Ver mais</a>
+                            <a class="botao botao-github" href="https://github.com/DreyMendonca/stock" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Estocaí - Gestão de Adega">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="imagem">
-                        <img src="https://picsum.photos/seed/agilidade-saude/640/360" alt="Imagem ilustrativa do projeto Agilidade na Saúde - Sistema de Senhas" loading="lazy">
+                        <img src="img/agilidade-na-saude-1.PNG" alt="Página inicial do Agilidade na Saúde" loading="lazy">
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">3º Semestre</span>
                         <h3 class="nome">Agilidade na Saúde - Sistema de Senhas</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Sistema web que integra médicos voluntários e pacientes que buscam atendimentos gratuitos, organizando tudo por meio de geração de senhas.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre Agilidade na Saúde - Sistema de Senhas">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Agilidade na Saúde - Sistema de Senhas">GitHub do projeto</a>
+                            <a class="botao botao-detalhes" href="projetos/agilidade-na-saude.html" aria-label="Ver mais sobre Agilidade na Saúde - Sistema de Senhas">Ver mais</a>
+                            <a class="botao botao-github" href="https://github.com/kaikdev/agilidade-na-saude" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Agilidade na Saúde - Sistema de Senhas">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="imagem">
-                        <img src="https://picsum.photos/seed/educa-simples/640/360" alt="Imagem ilustrativa do projeto Educa Simples - Reforço Escolar" loading="lazy">
+                        <img src="img/educa-simples-1.png" alt="Página inicial do Educa Simples" loading="lazy">
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">4º Semestre</span>
                         <h3 class="nome">Educa Simples - Reforço Escolar</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Plataforma web de jogos educativos que reforça Língua Portuguesa e Matemática Básica para crianças em fase de alfabetização.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre Educa Simples - Reforço Escolar">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Educa Simples - Reforço Escolar">GitHub do projeto</a>
+                            <a class="botao botao-detalhes" href="projetos/educa-simples.html" aria-label="Ver mais sobre Educa Simples - Reforço Escolar">Ver mais</a>
+                            <a class="botao botao-github" href="https://github.com/kaikdev/educa-simples" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Educa Simples - Reforço Escolar">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="item">
                     <div class="imagem">
-                        <img src="https://picsum.photos/seed/mindrest/640/360" alt="Imagem ilustrativa do projeto MindRest - Apoio na Ansiedade" loading="lazy">
+                        <img src="img/mind-rest-1.png" alt="Tela de boas-vindas do MindRest" loading="lazy">
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">5º Semestre</span>
                         <h3 class="nome">MindRest - Apoio na Ansiedade</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Aplicativo mobile de apoio ao controle do estresse e da ansiedade, com frases motivacionais, playlists relaxantes, exercícios de respiração e diário de emoções.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre MindRest - Apoio na Ansiedade">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto MindRest - Apoio na Ansiedade">GitHub do projeto</a>
+                            <a class="botao botao-detalhes" href="projetos/mindrest.html" aria-label="Ver mais sobre MindRest - Apoio na Ansiedade">Ver mais</a>
+                            <a class="botao botao-github" href="https://github.com/robertfullstack/LowStress" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto MindRest - Apoio na Ansiedade">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="item">
-                    <div class="imagem">
-                        <img src="https://picsum.photos/seed/smart-gym/640/360" alt="Imagem ilustrativa do projeto Smart Gym - Sistema de Automatização de Academia" loading="lazy">
+                    <div class="imagem imagem-placeholder">
+                        <span class="selo">Em desenvolvimento</span>
+                        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                            <defs>
+                                <linearGradient id="grad-halter" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#d03cd1"/>
+                                    <stop offset="0.5" stop-color="#8558f6"/>
+                                    <stop offset="1" stop-color="#1fcaf6"/>
+                                </linearGradient>
+                            </defs>
+                            <g stroke="url(#grad-halter)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="8" y="26" width="7" height="18" rx="2"/>
+                                <rect x="15" y="22" width="7" height="26" rx="2"/>
+                                <rect x="42" y="22" width="7" height="26" rx="2"/>
+                                <rect x="49" y="26" width="7" height="18" rx="2"/>
+                                <path d="M22 35h20"/>
+                                <path d="M26 14a9 9 0 0 1 12 0"/>
+                                <path d="M22 9a15 15 0 0 1 20 0"/>
+                            </g>
+                        </svg>
+                        <span>Imagens em breve</span>
                     </div>
 
                     <div class="conteudo">
                         <span class="subtitulo">6º Semestre</span>
                         <h3 class="nome">Smart Gym - Sistema de Automatização de Academia</h3>
                         <p class="descricao">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                            incididunt ut labore et dolore magna aliqua.
+                            Sistema de gestão inteligente para academias que integra software e IoT: sensores de presença nos aparelhos informam, em tempo real, se cada equipamento está livre ou em uso. Backend em Kotlin com Spring e frontend em Kotlin Multiplatform.
                         </p>
 
                         <div class="acoes">
-                            <a class="botao botao-detalhes" href="#" aria-label="Ver mais sobre Smart Gym - Sistema de Automatização de Academia">Ver mais</a>
-                            <a class="botao botao-github" href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Smart Gym - Sistema de Automatização de Academia">GitHub do projeto</a>
+                            <span class="botao botao-desabilitado" aria-disabled="true">Página em breve</span>
+                            <a class="botao botao-github" href="https://github.com/kaikdev/smart-gym" target="_blank" rel="noopener noreferrer" aria-label="GitHub do projeto Smart Gym - Sistema de Automatização de Academia">GitHub do projeto</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <footer id="footer">
+        <div class="content footer-topo">
+            <div class="marca">
+                <a class="logo-footer texto-gradiente" href="#">&lt; kaikdev /&gt;</a>
+                <p>
+                    Portfólio acadêmico com os projetos desenvolvidos ao longo do curso de
+                    Desenvolvimento de Software Multiplataforma na FATEC Zona Leste.
+                </p>
+            </div>
+
+            <div class="redes">
+                <span>Vamos nos conectar</span>
+                <ul>
+                    <li>
+                        <a href="https://github.com/kaikdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub de Kaik Silva Sousa">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                            GitHub
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="https://www.linkedin.com/in/kaiksilvasousa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Kaik Silva Sousa">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            LinkedIn
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content footer-base">
+            <p>&copy; 2026 Kaik Silva Sousa. Todos os direitos reservados.</p>
+            <a class="voltar-topo" href="#">Voltar ao topo &uarr;</a>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
+    <script src="js/animacoes.js"></script>
 </body>
 </html>
