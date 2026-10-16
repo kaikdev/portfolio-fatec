@@ -1,0 +1,190 @@
+.bg-animado {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* manchas de gradiente que flutuam devagar */
+.bg-blobs {
+    position: absolute;
+    inset: -10%;
+    transform: translate3d(calc(var(--px, 0) * -40px), calc(var(--py, 0) * -40px), 0);
+    transition: transform 1.4s cubic-bezier(.2, .7, .2, 1);
+}
+.bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform;
+}
+.bg-blob-1 {
+    width: 60vmax;
+    height: 60vmax;
+    top: -20%;
+    left: -15%;
+    background: radial-gradient(circle, rgba(208, 60, 209, 0.22) 0%, transparent 62%);
+    animation: flutuar-1 28s ease-in-out infinite alternate;
+}
+.bg-blob-2 {
+    width: 65vmax;
+    height: 65vmax;
+    bottom: -30%;
+    right: -20%;
+    background: radial-gradient(circle, rgba(64, 139, 247, 0.2) 0%, transparent 62%);
+    animation: flutuar-2 34s ease-in-out infinite alternate;
+}
+.bg-blob-3 {
+    width: 45vmax;
+    height: 45vmax;
+    top: 25%;
+    left: 35%;
+    background: radial-gradient(circle, rgba(133, 88, 246, 0.18) 0%, transparent 62%);
+    animation: flutuar-3 40s ease-in-out infinite alternate;
+}
+.bg-blob-4 {
+    width: 30vmax;
+    height: 30vmax;
+    top: 60%;
+    left: 5%;
+    background: radial-gradient(circle, rgba(31, 202, 246, 0.14) 0%, transparent 62%);
+    animation: flutuar-2 30s ease-in-out infinite alternate-reverse;
+}
+
+/* grade sutil com fade, dando um ar "tech" */
+.bg-grade {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(133, 88, 246, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(133, 88, 246, 0.06) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 0%, transparent 75%);
+    animation: grade-mover 60s linear infinite;
+}
+
+/* partículas (canvas desenhado pelo js/animacoes.js) */
+.bg-particulas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* luz que acompanha o mouse */
+.bg-luz {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640px;
+    height: 640px;
+    margin: -320px 0 0 -320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(133, 88, 246, 0.14) 0%, rgba(64, 139, 247, 0.06) 35%, transparent 65%);
+    opacity: 0;
+    transition: opacity .6s ease;
+    will-change: transform;
+}
+.bg-animado.mouse-ativo .bg-luz {
+    opacity: 1;
+}
+
+@keyframes flutuar-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(18vw, 12vh) scale(1.15); }
+    100% { transform: translate(6vw, 28vh) scale(0.92); }
+}
+@keyframes flutuar-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-16vw, -10vh) scale(1.1); }
+    100% { transform: translate(-6vw, -24vh) scale(0.95); }
+}
+@keyframes flutuar-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-20vw, 10vh) scale(1.2); }
+    66% { transform: translate(10vw, -12vh) scale(0.9); }
+    100% { transform: translate(-8vw, -4vh) scale(1.05); }
+}
+@keyframes grade-mover {
+    from { background-position: 0 0, 0 0; }
+    to { background-position: 0 64px, 64px 0; }
+}
+
+/* ---------- animações de entrada (scroll reveal) ----------
+   A classe .reveal só é adicionada via JS, então sem JS
+   o conteúdo continua aparecendo normalmente. Uso a propriedade
+   "translate" (e não "transform") para não conflitar com os
+   efeitos de hover que já existem nos cards. */
+.reveal {
+    opacity: 0;
+}
+.reveal.visivel {
+    animation: revelar 0.8s cubic-bezier(.2, .7, .2, 1) var(--atraso, 0ms) both;
+}
+@keyframes revelar {
+    from {
+        opacity: 0;
+        translate: 0 32px;
+    }
+    to {
+        opacity: 1;
+        translate: 0 0;
+    }
+}
+
+/* linha do título "desenha" ao aparecer */
+.titulo.reveal::after {
+    transform: scaleX(0);
+    transition: transform 1s cubic-bezier(.2, .7, .2, 1) .25s;
+}
+.titulo.reveal.visivel::after {
+    transform: scaleX(1);
+}
+
+/* barras de idioma enchem ao aparecer */
+.idiomas .item.reveal .nivel span {
+    width: 0;
+}
+.idiomas .item.reveal.visivel .nivel span {
+    width: var(--nivel, 0%);
+}
+
+/* entrada da seção inicial */
+.entrada {
+    animation: revelar 0.9s cubic-bezier(.2, .7, .2, 1) var(--atraso, 0ms) both;
+}
+main .area-img img {
+    animation: flutuar-foto 7s ease-in-out infinite;
+}
+main .area-img::before {
+    animation: respirar 7s ease-in-out infinite;
+}
+@keyframes flutuar-foto {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
+}
+@keyframes respirar {
+    0%, 100% { scale: 1; opacity: 0.85; }
+    50% { scale: 1.12; opacity: 1; }
+}
+
+/* acessibilidade: quem prefere menos movimento não vê as animações */
+@media (prefers-reduced-motion: reduce) {
+    .bg-blob,
+    .bg-grade,
+    main .area-img img,
+    main .area-img::before,
+    .entrada {
+        animation: none !important;
+    }
+    .bg-blobs {
+        transition: none;
+    }
+    .reveal {
+        opacity: 1;
+    }
+    .reveal.visivel {
+        animation: none;
+    }
+}
